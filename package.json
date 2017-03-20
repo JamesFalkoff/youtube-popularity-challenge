@@ -1,0 +1,24 @@
+{
+  "name": "youtube-popularity-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesFalkoff/youtube-popularity-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesFalkoff/youtube-popularity-challenge/issues"
+  },
+  "homepage": "https://github.com/JamesFalkoff/youtube-popularity-challenge#readme",
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-latest": "^6.24.0",
+    "babel-preset-react": "^6.23.0"
+  }
+}
