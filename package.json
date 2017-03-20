@@ -18,7 +18,9 @@
   "homepage": "https://github.com/JamesFalkoff/youtube-popularity-challenge#readme",
   "dependencies": {
     "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
     "babel-preset-latest": "^6.24.0",
-    "babel-preset-react": "^6.23.0"
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
   }
 }
