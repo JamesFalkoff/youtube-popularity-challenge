@@ -1,0 +1,18 @@
+.letterSelection {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 80%;
+  	margin-left: 10%;
+  	margin-right: 10%;
+}
+
+.letter {
+  background: #cde0f7;
+  border: 6px solid #000;
+  border-radius: 4px;
+  height: 40px;
+  width: 50px;
+  font-size: 30px;
+  text-align: center;	
+}
