@@ -1,6 +1,6 @@
 .letterSelection {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	width: 80%;
   	margin-left: 10%;
