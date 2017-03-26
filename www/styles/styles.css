@@ -1,10 +1,28 @@
 .letterSelection {
-	display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	width: 80%;
-  	margin-left: 10%;
-  	margin-right: 10%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.searchSelectionArea {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.searchSelection {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  width: 60%;
+  margin-left: 10%;
+  margin-right: 10px;
+  padding: 20px;
+  border: 6px solid #e52d27;
+  border-radius: 4px;
 }
 
 .letter {
@@ -14,5 +32,12 @@
   height: 40px;
   width: 50px;
   font-size: 30px;
-  text-align: center;	
+  text-align: center; 
+}
+
+.submitButton {
+  position: relative;
+  top: 25px;
+  max-height: 140px;
+  max-width: auto
 }

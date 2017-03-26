@@ -1,6 +1,13 @@
-export function letterClick(index) {
+export function letterSelect(index) {
   return { 
-    type: 'LETTER_CLICK', 
+    type: 'LETTER_SELECT', 
+    index: index 
+  };
+};
+
+export function letterDeselect(index) {
+  return { 
+    type: 'LETTER_DESELECT', 
     index: index 
   };
 };

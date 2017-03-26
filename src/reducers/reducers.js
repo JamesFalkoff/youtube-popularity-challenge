@@ -15,12 +15,20 @@ export function reducer(state, action) {
     return initialState;
   } 
 
+  let newState = Object.assign({}, state);
   switch(action.type) {
-    case 'LETTER_CLICK':
-      let newState = Object.assign({}, state);
+    case 'LETTER_SELECT':
       newState.letters = state.letters.map((letter) => {
         if(letter.index === action.index) {
           letter.selected = true;
+        }
+        return letter;
+      });
+      return newState;
+    case 'LETTER_DESELECT':
+      newState.letters = state.letters.map((letter) => {
+        if(letter.index === action.index) {
+          letter.selected = false;
         }
         return letter;
       });

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { letterSelect } from '../actions/actions';
-import LetterSelection from './LetterSelection';
+import { letterDeselect } from '../actions/actions';
+import SearchSelection from './SearchSelection';
 
 const mapStateToProps = (state) => {
   return {
@@ -13,14 +13,14 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onLetterClick: (index) => {
-      dispatch(letterSelect(index));
+      dispatch(letterDeselect(index));
     }
   };
 }
 
-const PlayArea = connect(
+const SearchArea = connect(
   mapStateToProps,
   mapDispatchToProps
-)(LetterSelection);
+)(SearchSelection);
 
-export default PlayArea;
+export default SearchArea;

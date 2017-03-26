@@ -1,5 +1,6 @@
 import React from 'react';
 import PlayArea from './PlayArea';
+import SearchArea from './SearchArea';
 
 class App extends React.Component {
   constructor() {
@@ -8,7 +9,10 @@ class App extends React.Component {
  
   render() {
     return (
-      <PlayArea />
+      <div>
+        <PlayArea />
+        <SearchArea />
+      </div>
     );
   }
 }
