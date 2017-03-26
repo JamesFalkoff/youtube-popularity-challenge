@@ -7,8 +7,8 @@ class Letter extends React.Component {
  
   render() {
     return (
-      <div className='letter'>
-      	{this.props.letter}
+      <div className='letter' onClick={() => {this.props.onLetterClick(this.props.letter.index)}} >
+      	{!this.props.letter.selected && this.props.letter.letter}
       </div>
     );
   }

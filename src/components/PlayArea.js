@@ -1,28 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import { alphabet } from '../config/alphabet';
+import { letterClick } from '../actions/actions';
 import LetterSelection from './LetterSelection';
 
-class PlayArea extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-    	letterSelection: this.getRandomLetters(54)
-    }
-  }
-
-  getRandomLetters(size) {
-    var letterSelection = [];
-    for(let i = 0; i < size; i++) {
-      letterSelection[i] = alphabet[Math.floor(Math.random() * alphabet.length)]; 
-    } 
-    return letterSelection;
-  }
- 
-  render() {
-    return (
-      <LetterSelection letters={this.state.letterSelection} />
-    );
+const mapStateToProps = (state) => {
+  return {
+    letters: state.letters
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLetterClick: (index) => {
+      dispatch(letterClick(index));
+    }
+  };
+}
+
+const PlayArea = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LetterSelection);
+
 export default PlayArea;

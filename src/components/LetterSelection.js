@@ -10,9 +10,10 @@ class LetterSelection extends React.Component {
   render() {
     return (
       <div className='letterSelection'>
-        {this.props.letters.map((letter) => <Letter letter={letter} />)}
+        {this.props.letters.map((letter) => <Letter letter={letter} onLetterClick={this.props.onLetterClick} />)}
       </div>
     );
   }
 }
+
 export default LetterSelection;
