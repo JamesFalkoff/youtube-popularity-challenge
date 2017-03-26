@@ -1,3 +1,16 @@
+.titleSection {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 40px;
+}
+
+.logo {
+  float: right;
+  height: 150px;
+  width: auto;
+}
+
 .letterSelection {
   display: flex;
   justify-content: flex-start;
@@ -5,6 +18,16 @@
   width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+.letter {
+  background: #cde0f7;
+  border: 6px solid #000;
+  border-radius: 4px;
+  height: 40px;
+  width: 50px;
+  font-size: 30px;
+  text-align: center; 
 }
 
 .searchSelectionArea {
@@ -23,16 +46,6 @@
   padding: 20px;
   border: 6px solid #e52d27;
   border-radius: 4px;
-}
-
-.letter {
-  background: #cde0f7;
-  border: 6px solid #000;
-  border-radius: 4px;
-  height: 40px;
-  width: 50px;
-  font-size: 30px;
-  text-align: center; 
 }
 
 .submitButton {
