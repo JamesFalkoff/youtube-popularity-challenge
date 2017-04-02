@@ -11,3 +11,16 @@ export function letterDeselect(index) {
     index: index 
   };
 };
+
+export function requestYouTubeResults() {
+  return {
+    type: 'YOUTUBE_REQUEST'
+  }
+}
+
+export function fetchYouTubeResults(query) {
+  return (dispatch) => {
+    dispatch(requestYouTubeResults());
+
+  }
+}

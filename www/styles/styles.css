@@ -54,3 +54,8 @@
   max-height: 140px;
   max-width: auto
 }
+
+.fetchingSpinner {
+  display: flex; 
+  justify-content: space-around;
+}
