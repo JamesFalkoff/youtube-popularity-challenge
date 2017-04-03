@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SelectedLetter from './SelectedLetter';
+import SearchResults from './SearchResults';
 
 class SearchSelection extends React.Component {
   constructor(props) {
@@ -29,6 +30,12 @@ class SearchSelection extends React.Component {
           <div className='searchError'>
             <p className='errorMessage'>Oops, the YouTube API isn't playing nicely and would not accept your search. Try playing again!</p>
           </div>        
+        }
+        {this.props.gameState === 'results' &&
+          <SearchResults 
+            results={this.props.results}
+            query={this.props.letters.map((letter) => letter.letter).join('')}
+          />
         }
       </div>
     );

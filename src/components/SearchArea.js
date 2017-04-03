@@ -7,7 +7,8 @@ import SearchSelection from './SearchSelection';
 const mapStateToProps = (state) => {
   return {
     gameState: state.gameState,
-    letters: state.letters.selectedLetters
+    letters: state.letters.selectedLetters,
+    results: state.gameResults
   }
 }
 

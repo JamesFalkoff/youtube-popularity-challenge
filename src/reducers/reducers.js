@@ -11,7 +11,8 @@ const initialState = {
       };
     }),
     selectedLetters: []
-  }
+  },
+  gameResults: {}
 }
 
 export function reducer(state, action) {
@@ -27,6 +28,10 @@ export function reducer(state, action) {
     case 'YOUTUBE_ERROR':
       newState.gameState = 'networkError';
       return newState;
+    case 'YOUTUBE_RESULTS':
+      newState.gameState = 'results';
+      newState.gameResults = action.results;
+      return newState;     
     case 'LETTER_SELECT':
     case 'LETTER_DESELECT':
       newState.letters = letters(state.letters, action);
