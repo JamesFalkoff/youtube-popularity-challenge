@@ -25,6 +25,11 @@ class SearchSelection extends React.Component {
             <img src='assets/spinner.gif' />
           </div>
         }
+        {this.props.gameState === 'networkError' && 
+          <div className='searchError'>
+            <p className='errorMessage'>Oops, the YouTube API isn't playing nicely and would not accept your search. Try playing again!</p>
+          </div>        
+        }
       </div>
     );
   }

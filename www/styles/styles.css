@@ -59,3 +59,16 @@
   display: flex; 
   justify-content: space-around;
 }
+
+.searchError {
+  color: #e52d27;
+  margin-top: 40px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.errorMessage {
+  font-size: 32px;
+  font-weight: bold;
+}

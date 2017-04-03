@@ -24,6 +24,9 @@ export function reducer(state, action) {
     case 'YOUTUBE_REQUEST':
       newState.gameState = 'fetching';
       return newState;
+    case 'YOUTUBE_ERROR':
+      newState.gameState = 'networkError';
+      return newState;
     case 'LETTER_SELECT':
     case 'LETTER_DESELECT':
       newState.letters = letters(state.letters, action);
