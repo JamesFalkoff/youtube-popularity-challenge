@@ -13,8 +13,9 @@ class SearchSelection extends React.Component {
         {this.props.gameState === 'playing' &&
           <div className='searchSelectionArea'>
             <div className='searchSelection'>
-              {this.props.letters.filter((letter) => { return letter.selected; })
-                                 .map((letter) => <SelectedLetter letter={letter} onLetterClick={this.props.onLetterClick} />)}
+              {this.props.letters.map((letter) => 
+                <SelectedLetter letter={letter} onLetterClick={this.props.onLetterClick} />)
+              }
             </div>
             <img className='submitButton' src='assets/YouTube-icon-full_color.png' onClick={() => this.props.onSubmit(this.props.letters)}/>
           </div>
