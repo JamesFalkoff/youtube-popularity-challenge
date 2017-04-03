@@ -7,7 +7,7 @@ import SearchSelection from './SearchSelection';
 const mapStateToProps = (state) => {
   return {
     gameState: state.gameState,
-    letters: state.selectedLetters
+    letters: state.letters.selectedLetters
   }
 }
 
@@ -17,9 +17,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(letterDeselect(index));
     },
     onSubmit: (letters) => {
-      let query = letters.filter((letter) => { return letter.selected; })
-      .map((letter) => { return letter.letter; })  
-      .join('');
+      let query = letters.map((letter) => { return letter.letter; }).join('');
       dispatch(fetchYouTubeResults(query));
     }
   };

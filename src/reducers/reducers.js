@@ -1,15 +1,17 @@
 import { getRandomLetters } from '../utils/letterUtils';
 
-let initialState = {
+const initialState = {
   gameState: 'playing',
-  letters: getRandomLetters(54).map((letter, index) => {
-    return {
-      letter: letter,
-      index: index,
-      selected: false
-    };
-  }),
-  selectedLetters: []
+  letters: {
+    allLetters: getRandomLetters(54).map((letter, index) => {
+      return {
+        letter: letter,
+        index: index,
+        selected: false
+      };
+    }),
+    selectedLetters: []
+  }
 }
 
 export function reducer(state, action) {
@@ -23,15 +25,27 @@ export function reducer(state, action) {
       newState.gameState = 'fetching';
       return newState;
     case 'LETTER_SELECT':
+    case 'LETTER_DESELECT':
+      newState.letters = letters(state.letters, action);
+      return newState;  
+    default: 
+      return state;
+  }
+}
+
+function letters(state, action) {
+  let newState = {};
+  switch(action.type) {
+    case 'LETTER_SELECT':
       newState.selectedLetters = state.selectedLetters.map((letter) => {
         return letter;
       });
-      state.letters.forEach((letter) => {
+      state.allLetters.forEach((letter) => {
         if(letter.index === action.index && !letter.selected) {
           newState.selectedLetters.push(letter);
         }
       });
-      newState.letters = state.letters.map((letter) => {
+      newState.allLetters = state.allLetters.map((letter) => {
         if(letter.index === action.index) {
           letter.selected = true;
         }
@@ -47,15 +61,12 @@ export function reducer(state, action) {
           newState.selectedLetters.splice(index, 1);
         }
       });      
-      newState.letters = state.letters.map((letter) => {
+      newState.allLetters = state.allLetters.map((letter) => {
         if(letter.index === action.index) {
           letter.selected = false;
         }
         return letter;
       });
       return newState;
-    default: 
-      return state;
-  }
+    }
 }
-

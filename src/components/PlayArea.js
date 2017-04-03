@@ -6,7 +6,7 @@ import LetterSelection from './LetterSelection';
 
 const mapStateToProps = (state) => {
   return {
-    letters: state.letters
+    letters: state.letters.allLetters
   }
 }
 
