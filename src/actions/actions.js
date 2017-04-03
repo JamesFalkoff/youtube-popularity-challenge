@@ -1,3 +1,5 @@
+import { getTopYouTubeResult } from '../utils/YouTubeUtils';
+
 export function letterSelect(index) {
   return { 
     type: 'LETTER_SELECT', 
@@ -21,6 +23,8 @@ export function requestYouTubeResults() {
 export function fetchYouTubeResults(query) {
   return (dispatch) => {
     dispatch(requestYouTubeResults());
-
+    getTopYouTubeResult(query, (error, result) => {
+      console.log(result);
+    });
   }
 }
