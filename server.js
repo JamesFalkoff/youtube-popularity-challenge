@@ -20,7 +20,26 @@ app.use(webpackDevMiddleware(compiler, {
   },
   historyApiFallback: true,
 }));
- 
+
+app.get('/scores', function(req, res) {
+  db.Score.findAll({order: 'score DESC', limit: 5}).then(function(scores) {
+    res.send(JSON.stringify(scores));
+  });
+});
+
+app.post('/scores', function(req, res) {
+  var results = req.body;
+  console.log('Results from client: ', results);
+  db.Score.create({
+    username: '',
+    query: results.query,
+    result: results.snippet.title,
+    channel: results.snippet.channelTitle,
+    score: results.statistics.viewCount,
+  });
+  res.send();
+});
+
 const server = app.listen(3000, function() {
   const host = server.address().address;
   const port = server.address().port;

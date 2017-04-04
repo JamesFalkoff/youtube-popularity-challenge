@@ -1,4 +1,5 @@
 import { getTopYouTubeResult } from '../utils/YouTubeUtils';
+import { getHighScores, postResults } from '../utils/highScoreUtils';
 
 export function letterSelect(index) {
   return { 
@@ -33,6 +34,13 @@ export function receiveYouTubeResults(results) {
   }
 }
 
+export function receiveHighScores(scores) {
+  return {
+    type: 'HIGH_SCORE_RESULTS',
+    scores: scores
+  }
+}
+
 export function fetchYouTubeResults(query) {
   return (dispatch) => {
     dispatch(requestYouTubeResults());
@@ -42,6 +50,13 @@ export function fetchYouTubeResults(query) {
         dispatch(errorYouTubeResults());
       } else {
         dispatch(receiveYouTubeResults(result));
+        result.query = query;
+        postResults(result, () => {
+          getHighScores((highScores) => {
+            console.log(highScores);
+            dispatch(receiveHighScores(highScores));
+          });  
+        });        
       }
     });
   }
