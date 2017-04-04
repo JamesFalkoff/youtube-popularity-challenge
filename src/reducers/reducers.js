@@ -12,7 +12,8 @@ const initialState = {
     }),
     selectedLetters: []
   },
-  gameResults: {}
+  gameResults: {},
+  highScores: []
 }
 
 export function reducer(state, action) {
@@ -31,7 +32,11 @@ export function reducer(state, action) {
     case 'YOUTUBE_RESULTS':
       newState.gameState = 'results';
       newState.gameResults = action.results;
-      return newState;     
+      return newState;  
+    case 'HIGH_SCORE_RESULTS':
+      newState.gameState = 'results';
+      newState.highScores = action.scores;
+      return newState;
     case 'LETTER_SELECT':
     case 'LETTER_DESELECT':
       newState.letters = letters(state.letters, action);

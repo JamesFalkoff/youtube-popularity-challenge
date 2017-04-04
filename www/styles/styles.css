@@ -83,3 +83,19 @@
   border-radius: 4px;
   background: #cde0f7;
 }
+
+.scoreDisplay {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%; 
+}
+
+.scoreTable {
+  width: 100%;
+  background: #cde0f7;
+  border: 6px solid #000;
+}
+
+.scoreTable td, th {
+  border: 2px solid #000;
+}

@@ -7,7 +7,7 @@ export function getHighScores(callback) {
     url: scoresUrl,
     method: 'GET',
     success: function(data) {
-      callback(data);
+      callback(JSON.parse(data));
     },
     error: function(data) {
       console.log('Error retrieving high scores from the server: ', data);

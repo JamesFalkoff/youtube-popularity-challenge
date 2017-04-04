@@ -53,7 +53,6 @@ export function fetchYouTubeResults(query) {
         result.query = query;
         postResults(result, () => {
           getHighScores((highScores) => {
-            console.log(highScores);
             dispatch(receiveHighScores(highScores));
           });  
         });        
