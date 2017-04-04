@@ -41,11 +41,16 @@ export function receiveHighScores(scores) {
   }
 }
 
+export function playAgain() {
+  return {
+    type: 'PLAY_AGAIN'
+  }
+}
+
 export function fetchYouTubeResults(query) {
   return (dispatch) => {
     dispatch(requestYouTubeResults());
     getTopYouTubeResult(query, (error, result) => {
-      console.log(result);
       if(error) {
         dispatch(errorYouTubeResults());
       } else {

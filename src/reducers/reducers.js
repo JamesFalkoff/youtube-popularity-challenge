@@ -41,6 +41,8 @@ export function reducer(state, action) {
     case 'LETTER_DESELECT':
       newState.letters = letters(state.letters, action);
       return newState;  
+    case 'PLAY_AGAIN':
+      return resetState();
     default: 
       return state;
   }
@@ -82,4 +84,22 @@ function letters(state, action) {
       });
       return newState;
     }
+}
+
+function resetState() {
+  return {
+    gameState: 'playing',
+    letters: {
+      allLetters: getRandomLetters(54).map((letter, index) => {
+        return {
+          letter: letter,
+          index: index,
+          selected: false
+        };
+      }),
+      selectedLetters: []
+    },
+    gameResults: {},
+    highScores: []
+  } 
 }

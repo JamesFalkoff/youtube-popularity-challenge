@@ -99,3 +99,19 @@
 .scoreTable td, th {
   border: 2px solid #000;
 }
+
+.timer {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;  
+  font-size: 40px;
+  font-weight: bold;
+  color: #e52d27;
+}
+
+.playAgainButton {
+  font-size: 20px;
+  margin-left: 30px;
+}
