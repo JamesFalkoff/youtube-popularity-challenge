@@ -1,0 +1,3 @@
+module.exports.DB_NAME = 'INSERT DATABASE NAME';
+module.exports.DB_USER = 'INSERT DATABASE USERNAME';
+module.exports.DB_PSWD = 'INSERT DATABASE USER PASSWORD';
